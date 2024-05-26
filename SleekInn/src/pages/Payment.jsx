@@ -12,7 +12,7 @@ const Payment = () => {
    const getSessionId= async ()=>{
    
     try {
-      let res = await axios.get("http://localhost:8000/payment")
+      let res = await axios.get("https://sleekinn-backend.onrender.com/payment")
       if(res.data && res.data.payment_session_id){
         console.log(res.data)
         setOrderId(res.data.order_id)

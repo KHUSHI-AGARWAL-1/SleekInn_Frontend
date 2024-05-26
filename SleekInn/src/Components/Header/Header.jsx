@@ -5,6 +5,7 @@ import logo from '../../assets/images/logo1.jpeg'
 import '../../styles/header.css'
 import { AuthContext } from './../../context/AuthContext'
 import Cookies from 'js-cookie'
+import { BASE_URL } from '../../utils/config'
 
 const nav_links = [
   {
@@ -35,7 +36,7 @@ const Header = () => {
   const logout = async () => {
     try {
       // Call your backend logout API
-      const response = await fetch('http://localhost:4000/api/v1/auth/logout', {
+      const response = await fetch(`${BASE_URL}/auth/logout`, {
         method: 'POST',
         credentials: 'include'
       });
